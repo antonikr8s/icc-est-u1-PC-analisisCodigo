@@ -3,34 +3,57 @@ import java.util.Arrays;
 public class MetodosOrdenamiento {
 
     // Método de burbuja tradicional con errores
-    // Error encontrado:
+    // Error encontrado: METODO RETORNA UN ARREGLO DE ENTEROS VACIOS
+    // SOLUCION: CAMBIAR EL RETURN PARA QUE REGRESE LA VARIAGLE "ARREGLO"
+    // Se corrige la condicion del for j = i + 1 -> j = 0
+
     public int[] burbujaTradicional(int[] arregloOriginal) {
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
-
         int n = arreglo.length;
+
         for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (arreglo[i] > arreglo[j]) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arreglo[j] > arreglo[j + 1]) {
+                    /*
+                     * for (int j = i + 1; j < n; j++) {
+                     * if (arreglo[i] > arreglo[j]) {
+                     * 
+                     */
+
                     // Intercambio de elementos
-                    int temp = arreglo[i];
-                    arreglo[i] = arreglo[j];
-                    arreglo[j] = temp;
+                    int temp = arreglo[j];
+                    arreglo[j] = arreglo[j + 1];
+                    arreglo[j + 1] = temp;
+
+                    /*
+                     * int temp = arreglo[i];
+                     * arreglo[i] = arreglo[j];
+                     * arreglo[j] = temp;
+                     */
                 }
             }
         }
-        return new int[] {};
+        return arreglo;
     }
 
     // Método de burbuja tradicional con errores
-    // Error encontrado:
+    // Error encontrado: SE USABAN MAL LOS INDICES DE COMPARACION
+    // Solución: ajustar el bucle para que i = j + 1
 
     public int[] burbujaTradicionalSegundo(int[] arregloOriginal) {
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
-
         int n = arreglo.length;
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (arreglo[i] < arreglo[j]) {
+
+        for (int pasada = 0; pasada < n; pasada++) {
+            for (int j = 0; j < n - pasada - 1; j++) {
+
+                int i = j + 1;// Para que se respete el uso del i
+                /*
+                 * for (int i = 0; i < n; i++) {
+                 * for (int j = i + 1; j < n; j++) {
+                 */
+                if (arreglo[j] > arreglo[i]) { // > ordenAscendente
+                    /* if (arreglo[i] < arreglo[j]) { */
                     // Intercambio de elementos
                     // Estas 3 lineas NO DEBEN ser modificadas
                     int temp = arreglo[i];
@@ -45,14 +68,16 @@ public class MetodosOrdenamiento {
     }
 
     // Método de burbuja tradicional con errores
-    // Error encontrado:
+    // Error encontrado: INDICE FUERA DE RANGO
+    // Solucion: Cambiar el segunfo for por j < n - i - 1
     public int[] burbujaTradicionalTercero(int[] arregloOriginal) {
 
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
-
         int n = arreglo.length;
+
         for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                /* for (int j = 0; j < n; j++) { */
                 if (arreglo[j] > arreglo[j + 1]) {
                     // Intercambio de elementos
                     int temp = arreglo[j];

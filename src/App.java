@@ -17,24 +17,23 @@ public class App {
         /// Anotar en cada metodo el error encontrado y como lo cambio en TEXTO
 
         // Metodo burbujaTradicional
-        int[] arregloBurbujaOrdenado1 = ordenador.burbujaTradicional(arregloBurbuja);
+        int[] arregloBurbujaOrdenado1 = ordenador.burbujaTradicional(arregloBurbuja.clone());
         System.out.println(
                 "Resultado burbuja tradicional Metodo 1 : " +
                         java.util.Arrays.toString(arregloBurbujaOrdenado1));
 
         // // Metodo burbujaTradicionalSegundo
-        // int[] arregloBurbujaOrdenado2 =
-        // ordenador.burbujaTradicionalSegundo(arregloBurbuja);
-        // System.out.println(
-        // "Resultado burbuja tradicional Metodo 2: " +
-        // java.util.Arrays.toString(arregloBurbujaOrdenado2));
+        int[] arregloBurbujaOrdenado2 = ordenador.burbujaTradicionalSegundo(arregloBurbuja.clone());
+        System.out.println(
+                "Resultado burbuja tradicional Metodo 2: " +
+                        java.util.Arrays.toString(arregloBurbujaOrdenado2));
 
         // // // Metodo burbujaTradicionalTercero
-        // int[] arregloBurbujaOrdenado3 =
-        // ordenador.burbujaTradicionalTercero(arregloBurbuja);
-        // System.out.println(
-        // "Resultado burbuja tradicional Metodo 3: " +
-        // java.util.Arrays.toString(arregloBurbujaOrdenado3));
+        int[] arregloBurbujaOrdenado3 =
+        ordenador.burbujaTradicionalTercero(arregloBurbuja);
+        System.out.println(
+        "Resultado burbuja tradicional Metodo 3: " +
+        java.util.Arrays.toString(arregloBurbujaOrdenado3));
 
         // Metodo seleccionPrimero
         // int[] arregloSeleccionOrdenado1 =
